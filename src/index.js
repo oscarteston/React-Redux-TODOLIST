@@ -32,12 +32,19 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import todoApp from './reducers';
 import App from './components/App';
+import Root from './components/Root';
 
 let store = createStore(todoApp);
 
+// render(
+//   <Provider store={store}>
+//     <App />
+//   </Provider>,
+//   document.querySelector('.container')
+// );
+
+//Uso con el Router
 render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Root store={store} />,
   document.querySelector('.container')
-);
+)
